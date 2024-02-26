@@ -39,7 +39,6 @@ class CurrentWeatherViewModelTest: XCTestCase {
     func testGetCurrentWeatherFailure() throws {
         let expectation = XCTestExpectation(description: "Testing current weather")
         let mockCoordinates = LocationModel(lat: 10.0, lon: 11.0)
-        let mockData = try XCTUnwrap(MockCurrentWeatherRepo.mockData(coordinate: mockCoordinates, temp: 300))
 
         let viewModel = WeatherForecastViewModel(
             locationManager: MockLocationManager(coordinate: mockCoordinates),
