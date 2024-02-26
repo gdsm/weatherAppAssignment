@@ -1,2 +1,2 @@
-# weatherAppAssignment
-POC assignment for project. Show current weather and weather forecast
+# assignmentWeatherApp
+POC assignment for weather app for Project selection process.
