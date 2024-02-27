@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct NetTemperatureModel: Codable, Hashable {
     let temp: Double
     let feels_like: Double

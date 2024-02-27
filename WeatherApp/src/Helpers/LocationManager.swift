@@ -11,11 +11,10 @@ import CoreLocation
 import Logging
 import UIKit
 
-
-enum LocationError: Error{
-    case Unknown
-    case LocationUnavilable
-    case PermissionRequired
+enum LocationError: Error {
+    case unknown
+    case locationUnavilable
+    case permissionRequired
 }
 
 protocol LocationProtocol {
@@ -58,7 +57,7 @@ class LocationManager: NSObject, LocationProtocol {
                 }
                 
                 if !self.checkAuthorisationStatus() {
-                    promise(Result.failure(.PermissionRequired))
+                    promise(Result.failure(.permissionRequired))
                     return
                 }
                 
@@ -69,7 +68,7 @@ class LocationManager: NSObject, LocationProtocol {
                             promise(Result.success(updatedLocation))
                         }
                     } else {
-                        promise(Result.failure(.LocationUnavilable))
+                        promise(Result.failure(.locationUnavilable))
                     }
                 }
             }

@@ -24,7 +24,7 @@ struct MockCurrentWeatherRepo: CurrentWeatherProtocol {
         do {
             let response = try decoder.decode(NetCurrentWeatherModel.self, from: data)
             return CurrentWeatherModel(model: response)
-        } catch ( _) {
+        } catch {
             return nil
         }
     }

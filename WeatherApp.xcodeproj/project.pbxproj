@@ -73,6 +73,10 @@
 		E682277F2B8657880050CAA8 /* MockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68227782B8657880050CAA8 /* MockLocationManager.swift */; };
 		E68227812B8744CA0050CAA8 /* AppViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68227802B8744CA0050CAA8 /* AppViewTest.swift */; };
 		E68227852B8754020050CAA8 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68227842B8754020050CAA8 /* UIDevice+Extension.swift */; };
+		E6D5B9AE2B8DB41500C4B2AB /* EncryptionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D5B9AD2B8DB41500C4B2AB /* EncryptionHelper.swift */; };
+		E6D5B9B02B8DB80900C4B2AB /* EncryptionHelperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D5B9AF2B8DB80900C4B2AB /* EncryptionHelperTest.swift */; };
+		E6D5B9B32B8DCF5300C4B2AB /* enc_apikey.txt in Resources */ = {isa = PBXBuildFile; fileRef = E6D5B9B22B8DCF5300C4B2AB /* enc_apikey.txt */; };
+		E6D5B9B52B8DD0C900C4B2AB /* pvtKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = E6D5B9B42B8DD0C900C4B2AB /* pvtKey.pem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +196,10 @@
 		E68227782B8657880050CAA8 /* MockLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLocationManager.swift; sourceTree = "<group>"; };
 		E68227802B8744CA0050CAA8 /* AppViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewTest.swift; sourceTree = "<group>"; };
 		E68227842B8754020050CAA8 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		E6D5B9AD2B8DB41500C4B2AB /* EncryptionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionHelper.swift; sourceTree = "<group>"; };
+		E6D5B9AF2B8DB80900C4B2AB /* EncryptionHelperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionHelperTest.swift; sourceTree = "<group>"; };
+		E6D5B9B22B8DCF5300C4B2AB /* enc_apikey.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = enc_apikey.txt; sourceTree = "<group>"; };
+		E6D5B9B42B8DD0C900C4B2AB /* pvtKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pvtKey.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +303,7 @@
 		E68226BD2B8655C50050CAA8 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				E6D5B9B12B8DCF5300C4B2AB /* resources */,
 				E682271C2B8656D80050CAA8 /* src */,
 				E68226BE2B8655C50050CAA8 /* AppDelegate.swift */,
 				E68226C02B8655C50050CAA8 /* SceneDelegate.swift */,
@@ -313,6 +322,7 @@
 				E68227742B8657880050CAA8 /* Mocks */,
 				E682276F2B8657880050CAA8 /* RepoTest */,
 				E68227712B8657880050CAA8 /* ViewModelTest */,
+				E6D5B9AF2B8DB80900C4B2AB /* EncryptionHelperTest.swift */,
 			);
 			path = WeatherAppTests;
 			sourceTree = "<group>";
@@ -465,6 +475,7 @@
 				E68227492B8656D80050CAA8 /* PermissionHelper.swift */,
 				E682274A2B8656D80050CAA8 /* LocationManager.swift */,
 				E68227842B8754020050CAA8 /* UIDevice+Extension.swift */,
+				E6D5B9AD2B8DB41500C4B2AB /* EncryptionHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -495,6 +506,15 @@
 				E68227782B8657880050CAA8 /* MockLocationManager.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		E6D5B9B12B8DCF5300C4B2AB /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E6D5B9B42B8DD0C900C4B2AB /* pvtKey.pem */,
+				E6D5B9B22B8DCF5300C4B2AB /* enc_apikey.txt */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -670,6 +690,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D5B9B32B8DCF5300C4B2AB /* enc_apikey.txt in Resources */,
+				E6D5B9B52B8DD0C900C4B2AB /* pvtKey.pem in Resources */,
 				E68226CB2B8655C60050CAA8 /* LaunchScreen.storyboard in Resources */,
 				E68226C82B8655C60050CAA8 /* Assets.xcassets in Resources */,
 				E68226C62B8655C50050CAA8 /* Main.storyboard in Resources */,
@@ -744,7 +766,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#alias swiftlint=\"/opt/homebrew/bin/swiftlint\"\n\n#echo $(which swiftlint)\n#if which swiftlint >/dev/null; then\n#  swiftlint\n#else\n#  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#alias swiftlint=\"/opt/homebrew/bin/swiftlint\"\n\n#echo $(which swiftlint)\n#if which swiftlint >/dev/null; then\n#  swiftlint\n#else\n#  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n\n\n${PODS_ROOT}/SwiftLint/swiftlint\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -773,6 +795,7 @@
 				E682274E2B8656D80050CAA8 /* BaseRepo.swift in Sources */,
 				E68227522B8656D80050CAA8 /* URLBuilder.swift in Sources */,
 				E68227542B8656D80050CAA8 /* ForecastModel.swift in Sources */,
+				E6D5B9AE2B8DB41500C4B2AB /* EncryptionHelper.swift in Sources */,
 				E68227622B8656D80050CAA8 /* NetWeatherForecastModel.swift in Sources */,
 				E682276D2B8656D80050CAA8 /* PermissionHelper.swift in Sources */,
 				E68227532B8656D80050CAA8 /* LocalisedString.swift in Sources */,
@@ -801,6 +824,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D5B9B02B8DB80900C4B2AB /* EncryptionHelperTest.swift in Sources */,
 				E682277C2B8657880050CAA8 /* MockWeatherForecastRepo.swift in Sources */,
 				E682277B2B8657880050CAA8 /* WeatherForecastViewModelTest.swift in Sources */,
 				E682277F2B8657880050CAA8 /* MockLocationManager.swift in Sources */,
@@ -922,7 +946,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -985,7 +1009,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1014,6 +1038,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U6T9BBGFE9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1043,6 +1068,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U6T9BBGFE9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

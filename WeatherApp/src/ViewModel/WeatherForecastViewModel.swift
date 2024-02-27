@@ -41,7 +41,7 @@ class WeatherForecastViewModel: ObservableObject {
             }
             if case .failure(let error) = failureValue {
                 switch error {
-                case .PermissionRequired:
+                case .permissionRequired:
                     downloadState = .permissionError
                 default:
                     downloadState = .error(message: "Error while fetching location.")
